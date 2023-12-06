@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting</title>
+    <style>
+        body {
+            background-image: url(https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaBfrUMh25jRYbFzTCC9VoVpsNFng_BsiFl94lhItC7AUHSes8iXbaRT_OuDG4rD0Q-kyzN18SMzzd9i-iuQ4BalXV6uiw=w950-h948);
+            background-size: cover; /* Adjust this property as needed */
+            background-repeat: no-repeat;
+            color: white
+        }
+    </style>
+</head>
+<body>
+    <form action='/enterproduct' method="post">
+        <h1>Product Management System</h1>
+        <h2>Enter Product Data</h2>
+        <label for="ProdCat">Product Category:</label>
+        <input type="text" id="ProdCat" name="ProdCat" required><br>
+        <label for="ProdDes">Product Description:</label>
+        <input type="text" id="ProdDes" name="ProdDes" required><br>
+        <label for="Price">Price:</label>
+        <input type="number" id="Price" name="Price" required><br>
+        <label for="ProdCode">Product Code:</label>
+        <input type="text" id="Price" name="ProdCode" required><br>
+        <button type="submit">Submit Data</button>
+    </form>
+    <form action='/' method="get">
+        <button type"submit">Go Home</button>
+    </form>
+</body>
+</html>
+
+

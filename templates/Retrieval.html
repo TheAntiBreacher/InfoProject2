@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url(https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaDS_o01dMu2uFMqTsatUhjcTHKiX-AdfXCbMhwFnD_5Lvaia6bjaTIOPN9FBFrIX4JXapGRSQ8KDvwobyGUebKIfkpq=w950-h948);
+            background-size: cover; /* Adjust this property as needed */
+            background-repeat: no-repeat;
+            color : black
+        }
+        body::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5); /* Adjust the last value for opacity (0 to 1) */
+            z-index: -1; /* Place it behind the content */
+        }
+    </style>
+    <title>Retrieval</title>
+</head>
+<body>
+    <h1>Product Management System</h1>
+    <form action="/retrieval" method="post">
+        <label for="CategoryRetrieve">Select Category to retrive from database :</label>
+        <input type="text" id="CategoryRetrieve" name="CategoryRetrieve"><br>
+        <button type"submit">Submit</button>
+    </form>
+
+<style>
+    table 
+    {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        border: 1px solid black;
+        text-align: left;
+        padding: 8px;
+    }
+</style>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Product Category</th>
+                <th>Product Description</th>
+                <th>Product Code</th>
+                <th>Price</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in df %}
+            <tr>
+                <td>{{ item['Product Category'] }}</td>
+                <td>{{ item['Product Description'] }}</td>
+                <td>{{ item['Product Code'] }}</td>
+                <td>{{ item['Price'] }}</td>
+                <td>
+                    <form action="/delete" method="post">
+                        <input type="hidden" name="ProductCodeToDelete" value="{{ item['Product Code'] }}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</div>
+    <form action='/' method="get">
+        <button type"submit">Go Home</button>
+    </form>
+
+</body>
+</html>
